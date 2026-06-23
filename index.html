@@ -201,30 +201,35 @@ function checkAnswers() {
     };
 
     fetch(
-        "https://script.google.com/macros/s/AKfycbx3FnrgVclrEDq-oMNflkNdwVFSlUWlZiKliZoHMq9NRkTY-CVhSmO19Agr7tVM3UsG8w/exec",
-        {
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json"
-            },
-            body:JSON.stringify(data)
-        }
-    )
-    .then(response => response.text())
-    .then(result => {
+"https://script.google.com/macros/s/AKfycbx3FnrgVclrEDq-oMNflkNdwVFSlUWlZiKliZoHMq9NRkTY-CVhSmO19Agr7tVM3UsG8w/exec",
+{
+method:"POST",
+mode:"no-cors",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify(data)
+}
+)
+.then(() => {
 
-        document.getElementById("result").innerHTML =
-            "✅ 答案提交成功！";
+```
+document.getElementById("result").innerHTML =
+    "✅ 答案提交成功！";
+```
 
-    })
-    .catch(error => {
+})
+.catch(error => {
 
-        document.getElementById("result").innerHTML =
-            "提交";
+```
+document.getElementById("result").innerHTML =
+    "❌ 提交失败，请重试。";
 
-        console.error(error);
+console.error(error);
+```
 
-    });
+});
+
 }
 
 </script>
