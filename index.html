@@ -19,8 +19,12 @@
 </head>
 <body>
     <div class="container">
-        <h1>《我家的小狗》练习题</h1>
+<h1>《我家的小狗》练习题</h1>
 
+<div class="question">
+    <p>学生姓名：</p>
+    <input type="text" id="studentName" style="width:300px;padding:8px;">
+</div>
         <h2>一、 <ruby>理<rt>lǐ</rt></ruby><ruby>解<rt>jiě</rt></ruby><ruby>与<rt>yǔ</rt></ruby><ruby>判<rt>pàn</rt></ruby><ruby>断<rt>duàn</rt></ruby> <span style="font-size:0.75em;">（Comprendre et juger: lire le texte et choisir la bonne réponse.）</span></h2>
 
 
@@ -59,25 +63,25 @@
         <div class="question">
             <p>4. “王子”这只小狗喜欢做什么运动？</p>
             <div class="options">
-                <input type="radio" name="q1" value="A"> A. <ruby>游<rt>yóu</rt></ruby><ruby>泳<rt>yǒng</rt></ruby><br>
-                <input type="radio" name="q1" value="B"> B. 和火车<ruby>赛<rt>sài</rt></ruby><ruby>跑<rt>pǎo</rt></ruby><br>
-                <input type="radio" name="q1" value="C"> C. 跳高
+                <input type="radio" name="q4" value="A"> A. <ruby>游<rt>yóu</rt></ruby><ruby>泳<rt>yǒng</rt></ruby><br>
+                <input type="radio" name="q4" value="B"> B. 和火车<ruby>赛<rt>sài</rt></ruby><ruby>跑<rt>pǎo</rt></ruby><br>
+                <input type="radio" name="q4" value="C"> C. 跳高
             </div>
         </div>
         <div class="question">
             <p>5. 当“王子”和火车<ruby>赛<rt>sài</rt></ruby><ruby>跑<rt>pǎo</rt></ruby>输了之后，它是怎么做的？</p>
             <div class="options">
-                <input type="radio" name="q2" value="A"> A. 很伤心，回家了。<br>
-                <input type="radio" name="q2" value="B"> B. 它从不在乎。<br>
-                <input type="radio" name="q2" value="C"> C. 继续追火车。
+                <input type="radio" name="q5" value="A"> A. 很伤心，回家了。<br>
+                <input type="radio" name="q5" value="B"> B. 它从不在乎。<br>
+                <input type="radio" name="q5" value="C"> C. 继续追火车。
             </div>
         </div>
         <div class="question">
             <p>6. <ruby>作<rt>zuò</rt></ruby><ruby>者<rt>zhě</rt></ruby>（auteur）教“王子”数数，它最多能数到几？</p>
             <div class="options">
-                <input type="radio" name="q3" value="A"> A. 二<br>
-                <input type="radio" name="q3" value="B"> B. 五<br>
-                <input type="radio" name="q3" value="C"> C. 十
+                <input type="radio" name="q6" value="A"> A. 二<br>
+                <input type="radio" name="q6" value="B"> B. 五<br>
+                <input type="radio" name="q6" value="C"> C. 十
             </div>
         </div>
 
@@ -108,18 +112,26 @@ Complète les phrases avec les mots proposés.
         <h2>三、 <ruby>拼<rt>pīn</rt></ruby><ruby>音<rt>yīn</rt></ruby><ruby>练<rt>liàn</rt></ruby><ruby>习<rt>xí</rt></ruby> <span style="font-size:0.75em;">（Exercices de pinyin: écrire le pinyin ou les caractères chinois.）</span></h2>
         <div class="question">
             <p>1. 看字写拼音：</p>
-            <p>等 — <input type="text">， 时候 — <input type="text"> ，课 — <input type="text"></p>
+
+            <p>
+等 — <input type="text" id="pinyin1">
+时候 — <input type="text" id="pinyin2">
+课 — <input type="text" id="pinyin3">
+</p>
         </div>
         <div class="question">
             <p>2. 看拼音写汉字：</p>
-            <p>xiǎng — <input type="text">， qián miàn — <input type="text">， jiāo — <input type="text"></p>
-        </div>
+<p>
+xiǎng — <input type="text" id="hanzi1">
+qián miàn — <input type="text" id="hanzi2">
+jiāo — <input type="text" id="hanzi3">
+</p>        </div>
 
         
         <h2>四、 <ruby>小<rt>xiǎo</rt></ruby><ruby>小<rt>xiǎo</rt></ruby><ruby>思<rt>sī</rt></ruby><ruby>考<rt>kǎo</rt></ruby><ruby>题<rt>tí</rt></ruby> <span style="font-size:0.75em;">（Réflexion personnelle: donner vos avis et expliquer vos pensée.）</span></h2>
         <div class="question">
             <p>1. 你觉得“王子”为什么明明知道和火车赛跑会输，却还是喜欢追？它是一个怎样的小狗？</p>
-            <textarea rows="4" style="width: 100%;"></textarea>
+<textarea id="essay" rows="4" style="width:100%;"></textarea>
         </div>
 
         <button onclick="checkAnswers()">提交答案</button>
@@ -127,9 +139,85 @@ Complète les phrases avec les mots proposés.
     </div>
 
     <script>
-        function checkAnswers() {
-            document.getElementById('result').innerText = "答案已提交！";
+
+function getRadioValue(name){
+    const selected =
+        document.querySelector(`input[name="${name}"]:checked`);
+    return selected ? selected.value : "";
+}
+
+function checkAnswers() {
+
+    const data = {
+
+        studentName:
+            document.getElementById("studentName").value,
+
+        q1:getRadioValue("q1"),
+        q2:getRadioValue("q2"),
+        q3:getRadioValue("q3"),
+        q4:getRadioValue("q4"),
+        q5:getRadioValue("q5"),
+        q6:getRadioValue("q6"),
+
+        blank1:
+            document.getElementById("blank1").value,
+
+        blank2:
+            document.getElementById("blank2").value,
+
+        blank3:
+            document.getElementById("blank3").value,
+
+        pinyin1:
+            document.getElementById("pinyin1").value,
+
+        pinyin2:
+            document.getElementById("pinyin2").value,
+
+        pinyin3:
+            document.getElementById("pinyin3").value,
+
+        hanzi1:
+            document.getElementById("hanzi1").value,
+
+        hanzi2:
+            document.getElementById("hanzi2").value,
+
+        hanzi3:
+            document.getElementById("hanzi3").value,
+
+        essay:
+            document.getElementById("essay").value
+    };
+
+    fetch(
+        "这里换成你的Google Apps Script地址",
+        {
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify(data)
         }
-    </script>
+    )
+    .then(response => response.text())
+    .then(result => {
+
+        document.getElementById("result").innerHTML =
+            "✅ 答案提交成功！";
+
+    })
+    .catch(error => {
+
+        document.getElementById("result").innerHTML =
+            "❌ 提交失败，请重试。";
+
+        console.error(error);
+
+    });
+}
+
+</script>
 </body>
 </html>
