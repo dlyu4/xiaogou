@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《我家的小狗》练习题</title>
+    <style>
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f4f7f6; }
+        .container { background-color: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; text-align: center; }
+        h2 { color: #2980b9; border-bottom: 2px solid #2980b9; padding-bottom: 10px; margin-top: 30px; }
+        .question { margin-bottom: 20px; }
+        .options { margin-left: 20px; list-style-type: none; }
+        button { background-color: #2980b9; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 16px; margin-top: 20px; }
+        button:hover { background-color: #3498db; }
+        #result { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>《我家的小狗》练习题</h1>
+
+        <h2>一、 <ruby>理<rt>lǐ</rt></ruby><ruby>解<rt>jiě</rt></ruby><ruby>与<rt>yǔ</rt></ruby><ruby>判<rt>pàn</rt></ruby><ruby>断<rt>duàn</rt></ruby> <span style="font-size:0.75em;">（Comprendre et juger）</span></h2>
+        <div class="question">
+            <p>1. “王子”这只小狗喜欢做什么运动？</p>
+            <div class="options">
+                <input type="radio" name="q1" value="A"> A. <ruby>游<rt>yóu</rt></ruby><ruby>泳<rt>yǒng</rt></ruby><br>
+                <input type="radio" name="q1" value="B"> B. 和火车<ruby>赛<rt>sài</rt></ruby><ruby>跑<rt>pǎo</rt></ruby><br>
+                <input type="radio" name="q1" value="C"> C. 跳高
+            </div>
+        </div>
+        <div class="question">
+            <p>2. 当“王子”和火车<ruby>赛<rt>sài</rt></ruby><ruby>跑<rt>pǎo</rt></ruby>输了之后，它是怎么做的？</p>
+            <div class="options">
+                <input type="radio" name="q2" value="A"> A. 很伤心，回家了。<br>
+                <input type="radio" name="q2" value="B"> B. 冲着远去的火车汪汪叫。<br>
+                <input type="radio" name="q2" value="C"> C. 继续追火车。
+            </div>
+        </div>
+        <div class="question">
+            <p>3. <ruby>作<rt>zuò</rt></ruby><ruby>者<rt>zhě</rt></ruby>（auteur）教“王子”数数，它最多能数到几？</p>
+            <div class="options">
+                <input type="radio" name="q3" value="A"> A. 二<br>
+                <input type="radio" name="q3" value="B"> B. 五<br>
+                <input type="radio" name="q3" value="C"> C. 十
+            </div>
+        </div>
+
+        <h2>二、 <ruby>词<rt>cí</rt></ruby><ruby>汇<rt>huì</rt></ruby><ruby>与<rt>yǔ</rt></ruby><ruby>表<rt>biǎo</rt></ruby><ruby>达<rt>dá</rt></ruby> <span style="font-size:0.75em;">（Vocabulaire et expression）</span></h2>
+        <div class="question">
+            <p>1. 请连线（匹配词语意思）：</p>
+            <p>乖 —— ( )， 淘气 —— ( )， 埋怨 —— ( )</p>
+            <p>A. 对某人或某事表示不满。 B. 听话、懂事。 C. 顽皮，喜欢闹。</p>
+        </div>
+        <div class="question">
+            <p>2. 填空题：</p>
+            <p>“王子”是我们村里毛色最 <input type="text" id="blank1"> 的一只狗。</p>
+            <p>作者经过 <input type="text" id="blank2"> 观察，发现了“王子”的可爱。</p>
+            <p>“王子”很喜欢同火车 <input type="text" id="blank3">。</p>
+            <p style="font-size: 0.9em; color: #777;">(选项：漂亮、仔细、<ruby>赛<rt>sài</rt></ruby><ruby>跑<rt>pǎo</rt></ruby>)</p>
+        </div>
+
+
+
+        <h2>三、 <ruby>拼<rt>pīn</rt></ruby><ruby>音<rt>yīn</rt></ruby><ruby>专<rt>zhuān</rt></ruby><ruby>项<rt>xiàng</rt></ruby><ruby>练<rt>liàn</rt></ruby><ruby>习<rt>xí</rt></ruby> <span style="font-size:0.75em;">（Exercices de pinyin）</span></h2>
+        <div class="question">
+            <p>1. 看字写拼音：</p>
+            <p>乖 —— <input type="text">， 淘 —— <input type="text">， 数 —— <input type="text"></p>
+        </div>
+        <div class="question">
+            <p>2. 看拼音写汉字：</p>
+            <p>chǒng —— <input type="text">， mǎ —— <input type="text">， shū —— <input type="text"></p>
+        </div>
+
+        
+        <h2>四、 <ruby>小<rt>xiǎo</rt></ruby><ruby>小<rt>xiǎo</rt></ruby><ruby>思<rt>sī</rt></ruby><ruby>考<rt>kǎo</rt></ruby><ruby>题<rt>tí</rt></ruby> <span style="font-size:0.75em;">（Réflexion personnelle）</span></h2>
+        <div class="question">
+            <p>1. 你觉得“王子”为什么明知道跑不赢火车，却还是喜欢追？它是一个怎样的小狗？</p>
+            <textarea rows="4" style="width: 100%;"></textarea>
+        </div>
+
+        <button onclick="checkAnswers()">提交答案</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            document.getElementById('result').innerText = "答案已提交！你可以把这个文件上传到 GitHub Pages 来分享。";
+        }
+    </script>
+</body>
+</html>
